@@ -3,5 +3,5 @@ services:
     name: amin-abdilahi-portfolio
     runtime: static
     buildCommand: npm ci && npm run build
-    staticPublishPath: ./dist
+    staticPublishPath: ./sooyaan
     pullRequestPreviewsEnabled: true
