@@ -1,5 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { Intro } from "./components/Intro";
+import { CodeRain, Typewriter } from "./components/Typewriter";
 import "./styles.css";
 
 type Project = {
@@ -39,6 +41,9 @@ const skillGroups = [
 function App() {
   return (
     <>
+      <Intro />
+      <div className="page-rain"><CodeRain /></div>
+      <div className="scanlines page-scanlines" />
       <header>
         <a className="brand" href="#top">Amin Abdilahi</a>
         <nav aria-label="Main navigation">
@@ -50,8 +55,10 @@ function App() {
       </header>
       <main id="top">
         <section className="hero">
+          <CodeRain />
           <p className="eyebrow">Software Engineering Graduate</p>
-          <h1>Building useful software for real people.</h1>
+          <p className="terminal-line">amin@portfolio:~$ <Typewriter text="whoami" /></p>
+          <h1 className="glow">Building useful software for real people.</h1>
           <p className="intro">I am Amin Abdilahi, a software engineering graduate based in Jigjiga, Ethiopia. I enjoy building clear, reliable web applications that solve practical problems.</p>
           <div className="actions">
             <a className="button primary" href="#projects">View projects</a>
@@ -61,12 +68,14 @@ function App() {
 
         <section id="about">
           <p className="eyebrow">About</p>
+          <p className="terminal-line">amin@portfolio:~$ <Typewriter text="cat about.txt" /></p>
           <h2>Practical, maintainable software.</h2>
           <p>My project experience includes web-based business systems and media platforms. I care about straightforward interfaces, secure application foundations, and software that is easy to maintain.</p>
         </section>
 
         <section id="projects">
           <p className="eyebrow">Selected work</p>
+          <p className="terminal-line">amin@portfolio:~$ <Typewriter text="ls projects/" /></p>
           <h2>Projects</h2>
           <div className="project-grid">
             {projects.map((project) => (
@@ -83,6 +92,7 @@ function App() {
 
         <section id="skills">
           <p className="eyebrow">Skills</p>
+          <p className="terminal-line">amin@portfolio:~$ <Typewriter text="cat skills.json" /></p>
           <h2>Tools I work with</h2>
           <div className="skills">
             {skillGroups.map(([title, items]) => <div key={title}><h3>{title}</h3><p>{items}</p></div>)}
